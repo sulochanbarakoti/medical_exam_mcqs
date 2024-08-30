@@ -29,14 +29,6 @@ const Login = () => {
               onChangeText={(e) => setForm({ ...form, password: e })}
             />
           </div>
-          {/* <div className="mb-4">
-            <div className="flex justify-center">
-              Replace this div with your ReCaptcha component
-              <div className="bg-gray-200 w-full p-3 rounded-lg text-center">
-                <p>Verify you are human</p>
-              </div>
-            </div>
-          </div> */}
           <button
             type="submit"
             className="w-full bg-primary text-white font-semibold p-3 rounded-lg disabled:opacity-50"
@@ -49,15 +41,10 @@ const Login = () => {
           <a href="#" className="text-blue-500 hover:underline">
             Forgot Password
           </a>
-          <a href="#" className="text-blue-500 hover:underline">
+          <a href="/signup" className="text-blue-500 hover:underline">
             I don't have an account
           </a>
         </div>
-        {/* <div className="mt-4 text-center">
-          <a href="#" className="text-blue-500 hover:underline">
-            Activate my account
-          </a>
-        </div> */}
       </div>
     </div>
   );

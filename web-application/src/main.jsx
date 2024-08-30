@@ -6,11 +6,13 @@ import Root from "./routes/root.jsx";
 import Login from "./routes/auth/login.jsx";
 import ErrorPage from "./routes/errorPage.jsx";
 import Signup from "./routes/auth/signup.jsx";
+import Home from "./routes/home.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Root />, errorElement: <ErrorPage /> },
   { path: "/login", element: <Login /> },
   { path: "/signup", element: <Signup /> },
+  { path: "/home", element: <Home /> },
 ]);
 
 createRoot(document.getElementById("root")).render(

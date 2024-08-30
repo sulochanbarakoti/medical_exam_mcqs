@@ -6,6 +6,10 @@ export default {
       colors: {
         primary: "#11806f",
       },
+      backgroundImage: {
+        background: "url('/src/assets/background.jpg')",
+        background1: "url('/src/assets/background1.jpg')",
+      },
     },
   },
   plugins: [],

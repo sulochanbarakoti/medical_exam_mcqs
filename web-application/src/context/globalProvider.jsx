@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { config, fetchQuestions } from "../lib/appwrite";
+import { config, fetchQuestions, getCurrentUser } from "../lib/appwrite";
 
 const GlobalContext = createContext({});
 export const useGlobalContext = () => useContext(GlobalContext);
@@ -35,8 +35,22 @@ const GlobalProvider = ({ children }) => {
         console.error("Failed to fetch questions", error);
       }
     };
-
     getQuestions();
+
+    getCurrentUser()
+      .then((res) => {
+        if (res) {
+          setIsLoggedIn(true);
+          setUser(res);
+        } else {
+          setIsLoggedIn(false);
+          setUser(null);
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to get current user", error);
+      })
+      .finally(() => setIsLoading(false));
   }, []);
 
   return (

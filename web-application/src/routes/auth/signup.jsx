@@ -8,6 +8,11 @@ const Signup = () => {
     password: "",
   });
 
+  const handleSubmit = () => {
+    console.log(form);
+    console.log("hi");
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-md">
@@ -15,7 +20,7 @@ const Signup = () => {
           Create an account.
         </h2>
         <p className="text-gray-600 text-center mb-6">Fill the form</p>
-        <form>
+        <div>
           <div className="mb-4">
             <InputField
               title="Username"
@@ -38,13 +43,12 @@ const Signup = () => {
             />
           </div>
           <button
-            type="submit"
-            className="w-full bg-primary text-white font-semibold p-3 rounded-lg disabled:opacity-50"
-            // disabled={!form.email || !form.password}
+            onClick={handleSubmit}
+            className="w-full bg-primary text-white font-semibold p-3 rounded-lg"
           >
             Sign Up
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );

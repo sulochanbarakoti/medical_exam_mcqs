@@ -12,10 +12,10 @@ const InputField = ({ title, onChangeText, placeholder }) => {
       </label>
       <input
         type={!showPassword ? title : "text"}
+        name={title}
         onChange={onChangeText}
         className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder={placeholder}
-        required
       />
       {title === "Password" && (
         <div className="absolute right-3 top-11">

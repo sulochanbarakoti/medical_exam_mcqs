@@ -54,7 +54,20 @@ const GlobalProvider = ({ children }) => {
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ physics, chemistry, botany, zoology }}>
+    <GlobalContext.Provider
+      value={{
+        physics,
+        chemistry,
+        botany,
+        zoology,
+        isLoading,
+        setIsLoading,
+        user,
+        setUser,
+        isLoggedIn,
+        setIsLoggedIn,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

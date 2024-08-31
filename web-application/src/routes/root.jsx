@@ -1,11 +1,16 @@
 import image from "../assets/image";
+import { useGlobalContext } from "../context/globalProvider";
 import CustomeButton from "./components/customeButtons";
 import { useNavigate } from "react-router-dom";
 
 const Root = () => {
-  const navigate = useNavigate();
+  const { user } = useGlobalContext();
 
+  const navigate = useNavigate();
   const handleClickButton = () => {
+    if (user) {
+      navigate("/home");
+    }
     navigate("/login");
   };
 

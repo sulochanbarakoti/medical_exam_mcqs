@@ -10,6 +10,10 @@ const GlobalProvider = ({ children }) => {
   const [zoology, setZoology] = useState([]);
   const [botany, setBotany] = useState([]);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const getQuestions = async () => {
       try {

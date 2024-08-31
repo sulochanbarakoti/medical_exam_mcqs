@@ -10,7 +10,7 @@ const Root = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="h-[100vh] flex flex-col justify-center items-center">
       <h1 className="text-3xl font-bold underline py-3">
         Medical Entrance Exam Preparation
       </h1>

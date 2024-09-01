@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const InputField = ({ title, onChangeText, placeholder }) => {
+const InputField = ({ title, changeText, placeholder }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -13,9 +13,10 @@ const InputField = ({ title, onChangeText, placeholder }) => {
       <input
         type={!showPassword ? title : "text"}
         name={title}
-        onChange={onChangeText}
+        onChange={changeText}
         className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder={placeholder}
+        required
       />
       {title === "Password" && (
         <div className="absolute right-3 top-11">

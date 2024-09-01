@@ -7,6 +7,7 @@ import Login from "./routes/auth/login.jsx";
 import ErrorPage from "./routes/errorPage.jsx";
 import Signup from "./routes/auth/signup.jsx";
 import Home from "./routes/home.jsx";
+import GlobalProvider from "./context/globalProvider.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Root />, errorElement: <ErrorPage /> },
@@ -16,7 +17,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+  <GlobalProvider>
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  </GlobalProvider>
 );

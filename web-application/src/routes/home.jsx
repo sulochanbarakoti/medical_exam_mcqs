@@ -4,10 +4,20 @@ import { GiSkeleton } from "react-icons/gi";
 import { GiPlantRoots } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../context/globalProvider";
+import { useEffect } from "react";
+import { getCurrentUser } from "../lib/appwrite";
 
 const Home = () => {
   const navigate = useNavigate();
-  const { physics, chemistry, botany, zoology } = useGlobalContext();
+  const { physics, chemistry, botany, zoology, user } = useGlobalContext();
+
+  useEffect(() => {
+    getCurrentUser().then((res) => {
+      if (!res) {
+        navigate("/");
+      }
+    });
+  });
 
   const topics = [
     {

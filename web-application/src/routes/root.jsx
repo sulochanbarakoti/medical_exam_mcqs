@@ -7,11 +7,13 @@ const Root = () => {
   const { user } = useGlobalContext();
 
   const navigate = useNavigate();
+
   const handleClickButton = () => {
     if (user) {
       navigate("/home");
+    } else {
+      navigate("/login");
     }
-    navigate("/login");
   };
 
   return (

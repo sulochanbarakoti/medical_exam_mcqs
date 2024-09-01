@@ -74,7 +74,6 @@ export const getCurrentUser = async () => {
       config.userCollectionId,
       [Query.equal("email", currentAccount.email)]
     );
-
     if (!currentUser) throw Error;
     return currentUser.documents[0];
   } catch (error) {

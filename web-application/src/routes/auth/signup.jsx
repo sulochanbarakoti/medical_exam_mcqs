@@ -1,16 +1,33 @@
 import { useState } from "react";
 import InputField from "../components/inputField";
+import { createUser } from "../../lib/appwrite";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  // const [emptyForm, setEmptyForm] = useState(true);
+
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     username: "",
     email: "",
     password: "",
   });
 
-  const handleSubmit = () => {
-    console.log(form);
-    console.log("hi");
+  const handleSubmit = async () => {
+    if (form.email && form.password && form.username) {
+      try {
+        const response = await createUser(
+          form.email,
+          form.password,
+          form.username
+        );
+        console.log("User created", response);
+        navigate("/home");
+      } catch (error) {
+        throw new Error(error);
+      }
+    }
   };
 
   return (
@@ -25,23 +42,26 @@ const Signup = () => {
             <InputField
               title="Username"
               placeholder="jane doe"
-              onChangeText={(e) => setForm({ ...form, username: e })}
+              changeText={(e) => setForm({ ...form, username: e.target.value })}
             />
           </div>
           <div className="mb-4">
             <InputField
               title="Email"
               placeholder="jane.doe@email.com"
-              onChangeText={(e) => setForm({ ...form, email: e })}
+              changeText={(e) => setForm({ ...form, email: e.target.value })}
             />
           </div>
           <div className="mb-4 relative">
             <InputField
               title="Password"
               placeholder="*************"
-              onChangeText={(e) => setForm({ ...form, password: e })}
+              changeText={(e) => setForm({ ...form, password: e.target.value })}
             />
           </div>
+          {/* <div className="my-2 bg-red-500 rounded-md p-2 text-white" hidden>
+            Please complete the form.
+          </div> */}
           <button
             onClick={handleSubmit}
             className="w-full bg-primary text-white font-semibold p-3 rounded-lg"

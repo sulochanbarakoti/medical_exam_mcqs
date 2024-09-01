@@ -9,7 +9,8 @@ import { getCurrentUser } from "../lib/appwrite";
 
 const Home = () => {
   const navigate = useNavigate();
-  const { physics, chemistry, botany, zoology, user } = useGlobalContext();
+  const { physics, chemistry, botany, zoology, user, isLoading } =
+    useGlobalContext();
 
   useEffect(() => {
     getCurrentUser().then((res) => {
@@ -47,7 +48,7 @@ const Home = () => {
   ];
 
   const handleTopicClick = (topic) => {
-    navigate("/starttest", { state: { questions: topic.questions } });
+    navigate("/practice", { state: { questions: topic.questions } });
   };
 
   const handleFullTestClick = () => {

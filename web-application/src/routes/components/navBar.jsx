@@ -13,16 +13,16 @@ const Navbar = () => {
               <a href="/home">MBBS MCQs</a>
             </div>
           </div>
-          {/* {!user ? ( */}
-          <div className="space-x-2">
-            <button className="bg-white p-1 rounded-md text-black font-bold px-3">
-              <a href="/signup">Sign Up </a>
-            </button>
-            <button className="bg-white p-1 rounded-md text-black font-bold px-3">
-              <a href="/login">LogIn </a>
-            </button>
-          </div>
-          {/* ) : (
+          {!user ? (
+            <div className="space-x-2">
+              <button className="bg-white p-1 rounded-md text-black font-bold px-3">
+                <a href="/signup">Sign Up </a>
+              </button>
+              <button className="bg-white p-1 rounded-md text-black font-bold px-3">
+                <a href="/login">LogIn </a>
+              </button>
+            </div>
+          ) : (
             <div className="flex flex-row justify-center items-center space-x-2">
               <div>
                 <img
@@ -38,7 +38,7 @@ const Navbar = () => {
                 <a href="/login">Log Out </a>
               </button>
             </div>
-          )} */}
+          )}
         </div>
       </nav>
     </div>

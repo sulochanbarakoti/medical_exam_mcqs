@@ -13,7 +13,7 @@ const Navbar = () => {
               <a href="/home">MBBS MCQs</a>
             </div>
           </div>
-          {!user ? (
+          {/* {!user ? (
             <div className="space-x-2">
               <button className="bg-white p-1 rounded-md text-black font-bold px-3">
                 <a href="/signup">Sign Up </a>
@@ -38,7 +38,7 @@ const Navbar = () => {
                 <a href="/login">Log Out </a>
               </button>
             </div>
-          )}
+          )} */}
         </div>
       </nav>
     </div>

@@ -10,6 +10,8 @@ import Home from "./routes/home.jsx";
 import GlobalProvider from "./context/globalProvider.jsx";
 import Navbar from "./routes/components/navBar.jsx";
 import Practice from "./routes/practice.jsx";
+import MockTest from "./routes/mockTest.jsx";
+import Test from "./routes/test.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Root />, errorElement: <ErrorPage /> },
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
   { path: "/signup", element: <Signup /> },
   { path: "/home", element: <Home /> },
   { path: "/practice", element: <Practice /> },
+  { path: "/mock-test", element: <MockTest /> },
+  { path: "test", element: <Test /> },
 ]);
 
 createRoot(document.getElementById("root")).render(

@@ -52,7 +52,7 @@ const Home = () => {
   };
 
   const handleFullTestClick = () => {
-    navigate("/dialog");
+    navigate("/mock-test");
   };
 
   return (

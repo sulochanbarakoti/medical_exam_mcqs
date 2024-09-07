@@ -14,7 +14,7 @@ const MockTest = () => {
             Highest Score: <span className="font-bold">0 / 141</span>
           </div>
           <button className="bg-blue-600 text-white px-6 py-2 rounded-md">
-            <a href="/fulltest">Start</a>
+            <a href="/test">Start</a>
           </button>
         </div>
       </div>
@@ -38,11 +38,11 @@ const MockTest = () => {
             <tbody>
               {/* Example Row */}
               <tr className="text-center">
-                <td className="p-4">
+                {/* <td className="p-4">
                   <a href="#" className="text-blue-600">
                     Resume
                   </a>
-                </td>
+                </td> */}
                 <td className="p-4">8/15/2024, 3:18:07 PM</td>
                 <td className="p-4">Practice Test</td>
                 <td className="p-4">02:09</td>

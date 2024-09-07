@@ -1,8 +1,8 @@
 import { FaUserDoctor } from "react-icons/fa6";
-import { useGlobalContext } from "../../context/globalProvider";
+// import { useGlobalContext } from "../../context/globalProvider";
 
 const Navbar = () => {
-  const { user } = useGlobalContext();
+  // const { user } = useGlobalContext();
   return (
     <div className="p-4 bg-background">
       <nav>

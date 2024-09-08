@@ -3,6 +3,7 @@ import { Client, Databases, Account, ID, Avatars, Query } from "appwrite";
 export const config = {
   databaseId: "66bb3704002e68cbd0ca",
   userCollectionId: "66d31e9e002fc2fc7fce",
+  testResultCollectionId: "66dc25fe00245e025fcf",
   physicsCollectionId: "66bb371a0038f2aedb69",
   chemistryCollectionId: "66bb37250030f527efd5",
   zoologyCollectionId: "66bb373a001ff487fbad",
@@ -52,6 +53,27 @@ export const createUser = async (email, password, username) => {
   }
 };
 
+//store test result in database
+export const storeTestResult = async (testReport) => {
+  try {
+    const result = await databases.createDocument(
+      config.databaseId,
+      config.testResultCollectionId,
+      ID.unique(),
+      {
+        users: testReport.users,
+        date: testReport.date,
+        correct: testReport.correct,
+        incorrect: testReport.incorrect,
+        total: testReport.total,
+      }
+    );
+    return result;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 // Sign in function to sign in
 export const signIn = async (email, password) => {
   try {
@@ -93,5 +115,18 @@ export async function fetchQuestions(collectionId) {
     // Now you can render these questions in your app's UI
   } catch (error) {
     console.error("Error fetching questions:", error);
+  }
+}
+
+//fetch test result
+export async function fetchResult(collectionId) {
+  try {
+    const response = await databases.listDocuments(
+      config.databaseId,
+      collectionId
+    );
+    return response.documents;
+  } catch (error) {
+    throw new Error(error);
   }
 }

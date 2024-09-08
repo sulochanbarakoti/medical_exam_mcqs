@@ -1,4 +1,18 @@
+import { useEffect, useState } from "react";
+import { fetchResult } from "../lib/appwrite";
+
 const MockTest = () => {
+  const [testResult, setTestResult] = useState([]);
+  useEffect(() => {
+    try {
+      fetchResult("66dc25fe00245e025fcf").then((res) => {
+        setTestResult(res);
+        console.log(testResult);
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
+  }, []);
   return (
     <div>
       <div className="flex justify-between items-center p-4 bg-white shadow-md">
@@ -24,36 +38,24 @@ const MockTest = () => {
           <table className="min-w-full bg-white rounded-md shadow-md">
             <thead className="bg-gray-200">
               <tr>
-                <th className="p-4">Complete</th>
                 <th className="p-4">Date</th>
                 <th className="p-4">Test</th>
-                <th className="p-4">Time</th>
                 <th className="p-4">Correct</th>
                 <th className="p-4">Incorrect</th>
-                <th className="p-4">Unanswered</th>
                 <th className="p-4">Total</th>
-                <th className="p-4">Percent</th>
               </tr>
             </thead>
-            <tbody>
-              {/* Example Row */}
-              <tr className="text-center">
-                {/* <td className="p-4">
-                  <a href="#" className="text-blue-600">
-                    Resume
-                  </a>
-                </td> */}
-                <td className="p-4">8/15/2024, 3:18:07 PM</td>
-                <td className="p-4">Practice Test</td>
-                <td className="p-4">02:09</td>
-                <td className="p-4">0</td>
-                <td className="p-4">0</td>
-                <td className="p-4">141</td>
-                <td className="p-4">141</td>
-                <td className="p-4">0%</td>
-              </tr>
-              {/* Repeat rows as needed */}
-            </tbody>
+            {testResult.map((item) => (
+              <tbody key={item.$id}>
+                <tr className="text-center">
+                  <td className="p-4">{item.date}</td>
+                  <td className="p-4">Practice Test</td>
+                  <td className="p-4">{item.correct}</td>
+                  <td className="p-4">{item.incorrect}</td>
+                  <td className="p-4">{item.total}</td>
+                </tr>
+              </tbody>
+            ))}
           </table>
         </div>
       </div>

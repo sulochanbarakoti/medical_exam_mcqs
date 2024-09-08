@@ -81,7 +81,7 @@ function QuestionInterface({
           </button>
           {currentQuestionIndex + 1 == totalQuestions ? (
             <button
-              onClick={onNext("submit")}
+              onClick={() => onNext("submit")}
               className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
             >
               Submit
@@ -89,7 +89,7 @@ function QuestionInterface({
             </button>
           ) : (
             <button
-              onClick={onNext("next")}
+              onClick={() => onNext("next")}
               className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
             >
               Next

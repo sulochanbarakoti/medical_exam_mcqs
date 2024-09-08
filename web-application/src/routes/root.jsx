@@ -13,7 +13,7 @@ const Root = () => {
     if (user) {
       navigate("/home");
     } else {
-      navigate("/login");
+      navigate("/");
     }
   });
 
@@ -21,7 +21,7 @@ const Root = () => {
     if (user) {
       navigate("/home");
     } else {
-      navigate("/login");
+      navigate("/");
     }
   };
 

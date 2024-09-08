@@ -14,7 +14,7 @@ const Login = () => {
         <p className="text-gray-600 text-center mb-6">
           Enter your email and password to continue
         </p>
-        <form>
+        <div>
           <div className="mb-4">
             <InputField
               title="Email"
@@ -29,14 +29,10 @@ const Login = () => {
               onChangeText={(e) => setForm({ ...form, password: e })}
             />
           </div>
-          <button
-            type="submit"
-            className="w-full bg-primary text-white font-semibold p-3 rounded-lg disabled:opacity-50"
-            disabled={!form.email || !form.password}
-          >
+          <button className="w-full bg-primary text-white font-semibold p-3 rounded-lg">
             Sign In
           </button>
-        </form>
+        </div>
         <div className="flex justify-between mt-4">
           <a href="#" className="text-blue-500 hover:underline">
             Forgot Password

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import image from "../assets/image";
 import { useGlobalContext } from "../context/globalProvider";
 import CustomeButton from "./components/customeButtons";
@@ -7,6 +8,14 @@ const Root = () => {
   const { user } = useGlobalContext();
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/home");
+    } else {
+      navigate("/login");
+    }
+  });
 
   const handleClickButton = () => {
     if (user) {

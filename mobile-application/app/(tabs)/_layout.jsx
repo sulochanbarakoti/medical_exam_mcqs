@@ -1,5 +1,6 @@
 import React from "react";
 import { Tabs } from "expo-router";
+import { FaHome } from "react-icons/fa";
 
 const TabLayout = () => {
   return (
@@ -8,9 +9,7 @@ const TabLayout = () => {
         name="home"
         options={{
           title: "Home",
-          // tabBarIcon: ({ color }) => (
-          //   <FontAwesome size={28} name="home" color={color} />
-          // ),
+          tabBarIcon: ({ color }) => <FaHome color={color} size={28} />,
         }}
       />
       <Tabs.Screen

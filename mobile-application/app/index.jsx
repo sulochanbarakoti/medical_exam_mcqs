@@ -8,7 +8,7 @@ import { router } from "expo-router";
 const Index = () => {
   const handleClick = () => {
     console.log("Button Clicked");
-    router.replace("/index");
+    router.replace("/home");
   };
   return (
     <View className="flex-1 items-center justify-center bg-white space-y-4">

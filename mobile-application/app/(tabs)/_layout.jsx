@@ -9,7 +9,9 @@ const TabLayout = () => {
         name="home"
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => <FaHome color={color} size={28} />,
+          // tabBarIcon: ({ color }) => (
+          //   <FaHome name="Home" color={color} size={28} />
+          // ),
         }}
       />
       <Tabs.Screen
